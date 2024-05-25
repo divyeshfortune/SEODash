@@ -22,7 +22,7 @@ html {
 
 @layer components{
   body{
-    @apply text-base overflow-x-hidden font-normal;
+    @apply text-base overflow-x-hidden font-normal bg-WhisperGray;
     -webkit-text-size-adjust: 100%;
   }
   textarea, input[type="text"], input[type="number"], input[type="email"], input[type="tel"], select{
@@ -46,18 +46,7 @@ html {
   h6{
     @apply text-18 font-medium text-secondary dark:text-white;
   }
-  .m_icon{
-    @apply inline-block h-[3.8125rem] w-[3.4375rem] bg-no-repeat bg-cover object-cover;
-  }
   .box_shadow{
     @apply shadow-[0px_3px_20px_0px_#3B4B68];
-  }
-  .header_shadow{
-    @apply shadow-[0_2px_20px_rgba(0,0,0,0.05)];
-  }
-  /* Default Button CSS Start */
-  .btn {
-    @apply relative inline-block border-0 z-[1] sm:py-3 py-2 sm:px-4 px-2 sm:text-17 text-base font-normal cursor-pointer no-underline bg-primary text-white before:content-[''] before:absolute before:-z-[1] after:content-[''] after:absolute after:-z-[1] hover:shadow-[inset_-7.5rem_0_0_0_#102D47,inset_7.5rem_0_0_0_#102D47] dark:hover:shadow-[inset_-7.5rem_0_0_0_#12429A,inset_7.5rem_0_0_0_#12429A];
-    transition: 0.5s;
   }
 }

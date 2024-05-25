@@ -20,8 +20,9 @@ module.exports = {
         Crayola: "#B7C2CC",
         stroke: "#DBE1E6",
         WhisperGray: "#F6F8FA",
-        SlateBlue: "#768B9E",
-        
+        lighthover: "#E9EDFF",
+        RoyalBlue: "#466EFB",
+        lightblue: "#E4F1FC",
       },
       screens: {
         sm: "768px",

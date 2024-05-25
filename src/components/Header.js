@@ -9,7 +9,7 @@ const Header = () => {
     <Navbar
       fluid
       rounded
-      className="px-8 rounded-none min-h-[4.375rem] pt-[0.5625rem] shadow-[0_3px_4px_0_rgba(0,0,0,0.031372549)] fixed w-full z-10 top-0"
+      className="px-8 rounded-none py-[0.875rem] shadow-[0_3px_4px_0_rgba(0,0,0,0.031372549)] fixed w-full z-10 top-0"
     >
       <Navbar.Brand href="/" className="basis-52">
         <img
@@ -21,7 +21,7 @@ const Header = () => {
       <div className="flex pr-4">
         <Link
           href="/"
-          className="group hover:bg-[#E9EDFF] p-[0.625rem] rounded-full"
+          className="group hover:bg-lighthover p-[0.625rem] rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const Header = () => {
           <div className="relative">
             <div className="absolute inset-y-0 right-4 flex items-center ps-3 pointer-events-none">
               <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                className="w-4 h-4 text-secondary dark:text-gray-400"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -67,7 +67,7 @@ const Header = () => {
             <input
               type="search"
               id="default-search"
-              className="block w-full focus:outline-none p-4 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:border-secondary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              className="block w-full focus:outline-none p-[0.63rem] text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:border-secondary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               placeholder="Search here...."
               required
             />
@@ -78,7 +78,7 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="group hover:bg-secondary rounded-full p-[0.375rem]"
+            className="hover:bg-lighthover rounded-full p-[0.375rem]"
           >
             <Icon
               icon="mage:notification-bell"
@@ -86,12 +86,12 @@ const Header = () => {
               height="24"
               inline="true"
               horizontalflip="true"
-              className="group-hover:text-white text-[#3A4752]"
+              className="text-secondary"
             />
           </Link>
           <Link
             href="/"
-            className="group hover:bg-secondary rounded-full p-[0.375rem]"
+            className="hover:bg-lighthover rounded-full p-[0.375rem]"
           >
             <Icon
               icon="fluent:mail-unread-24-regular"
@@ -99,7 +99,7 @@ const Header = () => {
               height="24"
               inline="true"
               horizontalflip="true"
-              className="group-hover:text-white text-[#3A4752]"
+              className="text-[#3A4752]"
             />
           </Link>
         </div>
@@ -107,7 +107,7 @@ const Header = () => {
           arrowIcon={false}
           inline
           label={
-            <Avatar alt="User settings" img="/images/Avatar.png" rounded />
+            <Avatar alt="User settings" img="/images/Avatar.png" width="44" height="44" rounded />
           }
         >
           <Dropdown.Header>
