@@ -12,10 +12,12 @@ const Header = () => {
       className="px-8 rounded-none py-[0.875rem] shadow-[0_3px_4px_0_rgba(0,0,0,0.031372549)] fixed w-full z-10 top-0"
     >
       <Navbar.Brand href="/" className="basis-52">
-        <img
+        <Image
           src="/icon/logo-white.svg"
           className="mr-3 h-6 sm:h-9"
           alt="Logo"
+          width={0}
+          height={0}
         />
       </Navbar.Brand>
       <div className="flex pr-4">
