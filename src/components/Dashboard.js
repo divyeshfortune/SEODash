@@ -331,7 +331,7 @@ const Dashboard = () => {
                         className="text-secondary"
                       />
                     </div>
-                    <p className="text-15 font-normal text-secondary"><sapn className="font-bold pr-[0.375rem]">31%</sapn>Direct</p>
+                    <p className="text-15 font-normal text-secondary"><span className="font-bold pr-[0.375rem]">31%</span>Direct</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-WhisperGray p-[0.625rem] rounded-full">
@@ -344,7 +344,7 @@ const Dashboard = () => {
                         className="text-secondary"
                       />
                     </div>
-                    <p className="text-15 font-normal text-secondary"><sapn className="font-bold pr-[0.375rem]">27%</sapn>Search</p>
+                    <p className="text-15 font-normal text-secondary"><span className="font-bold pr-[0.375rem]">27%</span>Search</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-WhisperGray p-[0.625rem] rounded-full">
@@ -357,7 +357,7 @@ const Dashboard = () => {
                         className="text-secondary"
                       />
                     </div>
-                    <p className="text-15 font-normal text-secondary"><sapn className="font-bold pr-[0.375rem]">42%</sapn>Social Media</p>
+                    <p className="text-15 font-normal text-secondary"><span className="font-bold pr-[0.375rem]">42%</span>Social Media</p>
                   </div>
                 </div>
               </div>

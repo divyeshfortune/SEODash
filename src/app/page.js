@@ -1,7 +1,8 @@
-import Dashboard from '@/components/Dashboard'
-import Header from '@/components/Header'
-import SideMenu from '@/components/Sidebar'
-import React from 'react'
+import dynamic from 'next/dynamic';
+
+const Dashboard = dynamic(() => import('@/components/Dashboard'), { ssr: false });
+const Header = dynamic(() => import('@/components/Header'), { ssr: false });
+const SideMenu = dynamic(() => import('@/components/Sidebar'), { ssr: false });
 
 const Home = () => {
   return (
