@@ -3,6 +3,7 @@ import React from "react";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -14,10 +15,13 @@ const Header = () => {
       <Navbar.Brand href="/" className="basis-52">
         <Image
           src="/icon/logo-white.svg"
-          className="mr-3 h-6 sm:h-9"
-          alt="Logo"
+          alt="logo"
           width={0}
           height={0}
+          layout="responsive"
+          quality={100}
+          sizes="100vh"
+          className="mr-3 h-6 sm:h-9"
         />
       </Navbar.Brand>
       <div className="flex pr-4">

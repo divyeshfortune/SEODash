@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import ReactApexChart from "react-apexcharts";
 
 const Dashboard = () => {
-  const [state, setState] = useState({
+  const [radialBarState, setRadialBarState] = useState({
     series: [76],
     options: {
       chart: {
@@ -23,7 +23,7 @@ const Dashboard = () => {
           track: {
             background: "#335FFB",
             strokeWidth: "97%",
-            margin: 5, // margin is in pixels
+            margin: 5,
             dropShadow: {
               enabled: true,
               top: 2,
@@ -74,17 +74,110 @@ const Dashboard = () => {
               color: "#85D446",
               opacity: 1,
             },
-          ], // Customize gradient colors
+          ],
         },
       },
       labels: ["Average Results"],
     },
   });
 
+  const [lineChartState, setLineChartState] = useState({
+    series: [
+      {
+        type: "rangeArea",
+        name: "Team B Range",
+        data: [
+          { x: "Mon", y: [1100, 1900] },
+          { x: "Tue", y: [1200, 1800] },
+          { x: "Wed", y: [900, 2900] },
+          { x: "Thu", y: [1400, 2700] },
+          { x: "Fri", y: [2600, 3900] },
+          { x: "Sat", y: [500, 1700] },
+          { x: "Sun", y: [1900, 2300] },
+        ],
+      },
+      {
+        type: "rangeArea",
+        name: "Team A Range",
+        data: [
+          { x: "Mon", y: [3100, 3400] },
+          { x: "Tue", y: [4200, 5200] },
+          { x: "Wed", y: [3900, 4900] },
+          { x: "Thu", y: [3400, 3900] },
+          { x: "Fri", y: [5100, 5900] },
+          { x: "Sat", y: [5400, 6700] },
+          { x: "Sun", y: [4300, 4600] },
+        ],
+      },
+      {
+        type: "line",
+        name: "Team B Median",
+        data: [
+          { x: "Mon", y: 1500 },
+          { x: "Tue", y: 1700 },
+          { x: "Web", y: 1900 },
+          { x: "Thu", y: 2200 },
+          { x: "Fri", y: 3000 },
+          { x: "Sat", y: 1000 },
+          { x: "Sun", y: 2100 },
+        ],
+      },
+      {
+        type: "line",
+        name: "Team A Median",
+        data: [
+          { x: "Mon", y: 3300 },
+          { x: "Tue", y: 4900 },
+          { x: "Web", y: 4300 },
+          { x: "Thu", y: 3700 },
+          { x: "Fri", y: 5500 },
+          { x: "Sat", y: 5900 },
+          { x: "Sun", y: 4500 },
+        ],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "rangeArea",
+        animations: {
+          speed: 500,
+        },
+      },
+      colors: ["#d4526e", "#33b2df", "#d4526e", "#33b2df"],
+      dataLabels: {
+        enabled: false,
+      },
+      fill: {
+        opacity: [0.24, 0.24, 1, 1],
+      },
+      forecastDataPoints: {
+        count: 2,
+      },
+      stroke: {
+        curve: "straight",
+        width: [0, 0, 2, 2],
+      },
+      legend: {
+        show: false,
+        customLegendItems: ["Team B", "Team A"],
+        inverseOrder: true,
+      },
+      markers: {
+        hover: {
+          sizeOffset: 5,
+        },
+      },
+      xaxis: {
+        categories: ["Mon", "Tue", "Web", "Tue", "Fri", "Sat", "Sun"],
+      },
+    },
+  });
+
   return (
     <>
       <div className="flex items-center justify-between pb-[1.875rem]">
-        <div className="">
+        <div>
           <h5 className="text-secondary font-semibold pb-2">
             Overview: <span className="text-primary">wrappixel.com</span>
           </h5>
@@ -124,7 +217,7 @@ const Dashboard = () => {
       </div>
 
       <div className="flex items-center gap-[1.875rem]">
-        <div className="">
+        <div>
           <Card className="max-w-sm bg-primary rounded-xl">
             <div className="flex items-center gap-4">
               <h6 className="text-white">Domain Rating</h6>
@@ -151,10 +244,10 @@ const Dashboard = () => {
                   SE Ranking Score
                 </p>
               </div>
-              <div className="">
+              <div>
                 <ReactApexChart
-                  options={state.options}
-                  series={state.series}
+                  options={radialBarState.options}
+                  series={radialBarState.series}
                   type="radialBar"
                 />
               </div>
@@ -201,11 +294,11 @@ const Dashboard = () => {
       </div>
 
       <div className="flex items-center justify-between gap-[1.775rem] pt-[1.775rem]">
-        <div className="">
+        <div>
           <Card className="bg-white rounded-xl w-[60.625rem]">
             <div className="flex items-center justify-between">
               <div>
-                <h6>Performance</h6>
+                <h6 className="font-semibold">Performance</h6>
               </div>
               <div>
                 <Select id="countries" required>
@@ -217,11 +310,57 @@ const Dashboard = () => {
               </div>
             </div>
             <div>
-                <ReactApexChart
-                  options={state.options}
-                  series={state.series}
-                  type="radialBar"
-                />
+              <ReactApexChart
+                options={lineChartState.options}
+                series={lineChartState.series}
+                type="rangeArea"
+              />
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-15 font-semibold text-secondary">Traffic Source</span>
+                </div>
+                <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-WhisperGray p-[0.625rem] rounded-full">
+                      <Icon
+                        icon="hugeicons:home-01"
+                        width="24"
+                        height="24"
+                        inline="true"
+                        horizontalflip="true"
+                        className="text-secondary"
+                      />
+                    </div>
+                    <p className="text-15 font-normal text-secondary"><sapn className="font-bold pr-[0.375rem]">31%</sapn>Direct</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-WhisperGray p-[0.625rem] rounded-full">
+                      <Icon
+                        icon="iconamoon:search-light"
+                        width="24"
+                        height="24"
+                        inline="true"
+                        horizontalflip="true"
+                        className="text-secondary"
+                      />
+                    </div>
+                    <p className="text-15 font-normal text-secondary"><sapn className="font-bold pr-[0.375rem]">27%</sapn>Search</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-WhisperGray p-[0.625rem] rounded-full">
+                      <Icon
+                        icon="solar:share-circle-line-duotone"
+                        width="24"
+                        height="24"
+                        inline="true"
+                        horizontalflip="true"
+                        className="text-secondary"
+                      />
+                    </div>
+                    <p className="text-15 font-normal text-secondary"><sapn className="font-bold pr-[0.375rem]">42%</sapn>Social Media</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </Card>
         </div>
