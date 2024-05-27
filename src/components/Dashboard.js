@@ -250,7 +250,6 @@ const Dashboard = () => {
                   options={radialBarState.options}
                   series={radialBarState.series}
                   type="radialBar"
-                  width={"100%"}
                 />
               </div>
             </div>
@@ -316,7 +315,6 @@ const Dashboard = () => {
                 options={lineChartState.options}
                 series={lineChartState.series}
                 type="rangeArea"
-                width={"100%"}
               />
               <div className="flex items-center justify-between">
                 <div>
