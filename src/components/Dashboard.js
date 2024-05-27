@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Card, Button, Breadcrumb, Select } from "flowbite-react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const Dashboard = () => {
   const [radialBarState, setRadialBarState] = useState({
@@ -245,10 +246,11 @@ const Dashboard = () => {
                 </p>
               </div>
               <div>
-                <ReactApexChart
+                <Chart
                   options={radialBarState.options}
                   series={radialBarState.series}
                   type="radialBar"
+                  width={"100%"}
                 />
               </div>
             </div>
@@ -310,10 +312,11 @@ const Dashboard = () => {
               </div>
             </div>
             <div>
-              <ReactApexChart
+              <Chart
                 options={lineChartState.options}
                 series={lineChartState.series}
                 type="rangeArea"
+                width={"100%"}
               />
               <div className="flex items-center justify-between">
                 <div>
